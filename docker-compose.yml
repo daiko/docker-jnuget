@@ -1,0 +1,12 @@
+version: "2"
+services:
+    jnuget:
+        build: ./jnuget
+        ports:
+            - 8080:8080
+        volumes:
+            - ./data:/var/lib/jnuget
+            - ./config/jnuget.config.xml:/var/lib/jnuget/jnuget.config.xml
+            - ./config/jnuget.users.xml:/var/lib/jnuget/jnuget.users.xml
+            - ./logs:/usr/local/tomcat/logs
+
